@@ -1,0 +1,36 @@
+name: Build Python Exe
+
+on:
+  push:
+    paths:
+      - '**.py'
+  workflow_dispatch:
+
+jobs:
+  build-windows-exe:
+    runs-on: windows-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies (if exists)
+        run: |
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        shell: bash
+
+      - name: Install PyInstaller
+        run: pip install pyinstaller
+
+      - name: Build exe with PyInstaller
+        run: pyinstaller --onefile pdf_dc_ocr.py
+
+      - name: Upload exe artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdf_dc_ocr-exe
+          path: ./dist/pdf_dc_ocr.exe
