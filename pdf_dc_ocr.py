@@ -55,6 +55,8 @@ def pdf_page_to_searchable_pdf_page(pdf_path, page_index, lang='jpn+eng'):
 class PDFToolGUI:
     def __init__(self, root):
         self.root = root
+        self.ocr_var_merge = IntVar()
+        self.ocr_var_split = IntVar()
         self.root.title("PDF結合/分割＋OCRツール")
         self.root.geometry("520x480")
         self.root.configure(bg="#fff")
