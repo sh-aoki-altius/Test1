@@ -18,9 +18,10 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Install dependencies
+      - name: Install dependencies (if exists)
         run: |
-          pip install -r requirements.txt
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        shell: bash
 
       - name: Install PyInstaller
         run: pip install pyinstaller
