@@ -22,10 +22,10 @@ jobs:
         run: pip install pyinstaller
 
       - name: Build exe with PyInstaller
-        run: pyinstaller --onefile PDF分割結合ツール_パス付対応.py
+        run: pyinstaller --onefile PDF_DC2.py
 
       - name: Upload exe artifact
         uses: actions/upload-artifact@v4
         with:
-          name: PDF分割結合ツール_パス付対応-exe
-          path: ./dist/PDF_dc.exe
+          name: PDF_DC2-exe
+          path: ./dist/PDF_DC2.exe
