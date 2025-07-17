@@ -28,4 +28,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: PDF分割結合ツール_パス付対応-exe
-          path: ./dist/PDF分割結合ツール_パス付対応.exe
+          path: ./dist/PDF_dc.exe
