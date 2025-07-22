@@ -27,10 +27,10 @@ jobs:
         run: pip install pyinstaller
 
       - name: Build exe with PyInstaller
-        run: pyinstaller --onefile pdf_dc_ocr.py
+        run: pyinstaller --onefile --noconsole PDF_DC2.py
 
       - name: Upload exe artifact
         uses: actions/upload-artifact@v4
         with:
-          name: pdf_dc_ocr-exe
-          path: ./dist/pdf_dc_ocr.exe
+          name: ocr_pdf_gui-exe
+          path: ./dist/ocr_pdf_gui.exe
