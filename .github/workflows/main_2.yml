@@ -27,7 +27,7 @@ jobs:
         run: pip install pyinstaller
 
       - name: Build exe with PyInstaller
-        run: pyinstaller --onefile --noconsole PDF_DC2.py
+        run: pyinstaller --onefile --noconsole ocr_pdf_gui.py
 
       - name: Upload exe artifact
         uses: actions/upload-artifact@v4
